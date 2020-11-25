@@ -1,7 +1,7 @@
 1.removes consecutive dupliactes from array
 
 vector<int>v;
-v.erase(unique(v.begin(),v.end()),v.end());
+ v.resize(distance(v.begin(), unique(v.begin(), v.end())));
 
 2.
 

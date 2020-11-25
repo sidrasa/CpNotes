@@ -1,4 +1,8 @@
+1.removes consecutive dupliactes from array
+
 vector<int>v;
 v.erase(unique(v.begin(),v.end()),v.end());
-//removes consecutive dupliactes from array
+
+2.
+
 

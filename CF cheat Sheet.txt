@@ -3,6 +3,8 @@
 vector<int>v;
  v.resize(distance(v.begin(), unique(v.begin(), v.end())));
 
-2.
+2.2d vector with user defined size(n*m)
+    vector<vector<int>> dp(n + 1, vector<int>(m + 1));
+
 
 

@@ -9,3 +9,8 @@ vector<int>v;
 3.It uses a builtin function of the GCC compiler to calculate the position from the right of the first non-zero (1) bit in the binary representation of k.
 __builtin_ffsll(n); 
 
+mega actns
+1.yeyak43006@febula.com
+mega1234
+_zJfBVCwsH10J_MV_Yeldw
+web dev coding ninja

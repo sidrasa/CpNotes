@@ -23,3 +23,7 @@ WG-3Knb3dDcYaQu8N5SPpA
 Course On Recursion and Dynamic Programming [@educationalcloud]
 Course On ICPC Regional Problem Solving [@educationalcloud]
 Pulkit Chhabra sir - Detailed Course on Graphs - I [@educationalcloud]
+Riya Bansal sir - Course On Sorting and Searching 
+Sanket Singh sir - Standard Template Library in C++
+Murugappan S sir - Course On Greedy Algorithms
+riveni Mahatha sir - Course On Introduction to Competitive Programming with C++ 

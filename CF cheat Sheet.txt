@@ -12,6 +12,36 @@ __builtin_ffsll(n);
 4.integer into char
 char('0' + d)
 
+5.Prime factor,Prime
+vector<bool> ip;
+vi p, spf;
+
+void seive(int n)
+{
+    ip.assign(n + 1, 1);
+    spf.assign(n + 1, 0);
+    ip[0] = ip[1] = 0;
+    p = {};
+    for (int i = 2; i <= n; i++)
+    {
+        if (ip[i])
+        {
+            spf[i] = i;
+            p.pb(i);
+            for (int j = i * i; j <= n; j += i)
+            {
+                if (ip[j])
+                {
+                    ip[j] = 0;
+                    spf[j] = i;
+                }
+            }
+        }
+    }
+}
+
+
+
 mega actns
 1.yeyak43006@febula.com
 mega1234

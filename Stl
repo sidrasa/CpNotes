@@ -1,0 +1,11 @@
+1.Cmp in multiset
+
+struct cmp{
+    bool operator()(const pii a,const pii b)const{
+        if(a.ff!=b.ff)
+            return a.ff > b.ff;
+        R a.ss < b.ss;
+    }
+};
+
+multiset<pii,cmp> ml;

@@ -9,3 +9,6 @@ struct cmp{
 };
 
 multiset<pii,cmp> ml;
+
+2.Flush Output
+cout << flush;

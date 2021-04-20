@@ -41,6 +41,19 @@ void seive(int n)
 }
 
 
+6.a power p mod 
+int pw(int a,int p,int MOD=mod){
+	int result = 1;
+	while (p > 0) {
+		if (p & 1)
+			result = a * result % MOD;
+		a = a * a % MOD;
+		p >>= 1;
+	}
+	return result;
+}
+
+
 
 mega actns
 1.yeyak43006@febula.com

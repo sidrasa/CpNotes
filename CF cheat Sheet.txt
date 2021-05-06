@@ -53,7 +53,29 @@ int pw(int a,int p,int MOD=mod){
 	return result;
 }
 
+7. Inverse and nCr
+factorial of a number in O(n),and queries of nCr in log(n)
+int fact[N],invfact[N];
+void init(){
+	int p=PRIME;
+	fact[0]=1;
+	int i;
+	for(i=1;i<N;i++){
+		fact[i]=i*fact[i-1]%p;
+	}
+	i--;
+	invfact[i]=pw(fact[i],p-2,p);
+	for(i--;i>=0;i--){
+		invfact[i]=invfact[i+1]*(i+1)%p;
+	}
+}
+int ncr(int n,int r){
+	if(r > n || n < 0 || r < 0)return 0;
+	return fact[n]*invfact[r]%PRIME*invfact[n-r]%PRIME;
+}
 
+
+8.
 
 mega actns
 1.yeyak43006@febula.com

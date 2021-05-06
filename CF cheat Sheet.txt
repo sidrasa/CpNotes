@@ -56,6 +56,8 @@ int pw(int a,int p,int MOD=mod){
 7. Inverse and nCr
 factorial of a number in O(n),and queries of nCr in log(n) 
 Run init()
+
+#define PRIME	MOD
 int fact[N],invfact[N];
 void init(){
 	int p=PRIME;

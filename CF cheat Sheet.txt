@@ -15,6 +15,10 @@ char('0' + d)
 5.Prime factor,Prime
 vector<bool> ip;
 vi p, spf;
+/* p-prime list
+spf-smallest prime factor
+ip-tells if a number is prime
+*/
 
 void seive(int n)
 {

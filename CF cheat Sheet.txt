@@ -25,7 +25,7 @@ void seive(int n)
     ip.assign(n + 1, 1);
     spf.assign(n + 1, 0);
     ip[0] = ip[1] = 0;
-    p = {};
+    p.clear();
     for (int i = 2; i <= n; i++)
     {
         if (ip[i])

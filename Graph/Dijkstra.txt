@@ -1,0 +1,21 @@
+void dijkstra(int sc)
+{
+    priority_queue<pair<int, int>, vector<pair<int, int>>, prio> pq;
+    dist[sc] = 0;
+    pq.push({0, sc});
+    while (!pq.empty())
+    {
+        pair<int, int> tp = pq.top();
+        pq.pop();
+        for (auto e : g[tp.first])
+        {
+            int ng = e.first;
+            int wt = e.second;
+            if (dis[ng] > dis[tp.first] + wt)
+            {
+                dis[ng] = dis[tp.first] + wt;
+                pq.push({ng, dis[ng]});
+            }
+        }
+    }
+}

@@ -1,5 +1,14 @@
-void dijkstra(int sc)
-{
+class prio {
+public: bool operator ()(pii &p1, pii &p2) {
+        return p1.ss > p2.ss;
+    }
+};
+
+
+
+
+
+
     priority_queue<pair<int, int>, vector<pair<int, int>>, prio> pq;
     dist[sc] = 0;
     pq.push({0, sc});
@@ -18,4 +27,3 @@ void dijkstra(int sc)
             }
         }
     }
-}

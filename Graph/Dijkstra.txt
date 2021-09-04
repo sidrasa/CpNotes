@@ -11,7 +11,7 @@ public: bool operator ()(pii &p1, pii &p2) {
 
     priority_queue<pair<int, int>, vector<pair<int, int>>, prio> pq;
     dist[sc] = 0;
-    pq.push({0, sc});
+    pq.push({sc,0});
     while (!pq.empty())
     {
         pair<int, int> tp = pq.top();

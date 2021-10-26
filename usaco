@@ -1,0 +1,2 @@
+ifstream cin("closing.in");
+ofstream cout("closing.out");

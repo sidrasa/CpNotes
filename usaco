@@ -1,2 +1,2 @@
-ifstream cin("closing.in");
-ofstream cout("closing.out");
+freopen("closing.in", "r", stdin);
+freopen("closing.out", "w", stdout);

@@ -16,6 +16,11 @@ public: bool operator ()(pii &p1, pii &p2) {
     {
         pair<int, int> tp = pq.top();
         pq.pop();
+        
+        //imp opti if TLE
+        if(dis[tp.first]<tp.second)
+        continue;
+        
         for (auto e : g[tp.first])
         {
             int ng = e.first;

@@ -1,0 +1,22 @@
+bool dfs(int v, vector<int> graph[]) {
+        color[v] = 1;
+        for (int u : graph[v]) {
+            if (color[u] == 0) {
+                if (dfs(u, graph))
+                    return true;
+            } else if (color[u] == 1) {
+                return true;
+            }
+        }
+        color[v] = 2;
+        return false;
+    }
+    bool find_cycle(vector<int> graph[], int n) {
+        color.assign(n, 0);
+
+        for (int v = 0; v < n; v++) {
+            if (color[v] == 0 && dfs(v, graph))
+                return true;
+        }
+        return false;
+    }

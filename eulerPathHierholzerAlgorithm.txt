@@ -1,0 +1,40 @@
+Read the problem https://leetcode.com/contest/weekly-contest-270/problems/valid-arrangement-of-pairs/ before using 
+void dfs(vector<vector<int>>&ans,int cur,map<int,vector<int>>&um){
+        while(um[cur].size()){
+            int tp=um[cur].back();
+            um[cur].pop_back();
+            dfs(ans,tp,um);
+            ans.push_back({cur,tp});
+        }
+    }
+    vector<vector<int>> validArrangement(vector<vector<int>>& p) {
+        int n=p.size();
+        map<int,vector<int>>um;
+        map<int,int>in;
+        // unordered_map<int,int>out;
+        for(int i=0;i<n;i++){
+            int u=p[i][0],v=p[i][1];
+            um[u].push_back(v);
+            in[v]--,
+            in[u]++;
+        }
+        int start=-1;
+        for(auto e:in){
+            if(e.second==1){
+                start=e.first;
+            }
+        }
+        if(start==-1){
+            start=p[0][0];
+        }
+        // cout<<start<<"\n";
+        vector<vector<int>>ans;
+        dfs(ans,start,um);
+        reverse(ans.begin(),ans.end());
+        // for(auto e:ans){
+        //     for(auto j:e)
+        //         cout<<j<<" ";
+        //     cout<<endl;
+        // }
+        return ans;
+    }

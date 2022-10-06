@@ -1,0 +1,17 @@
+int binarySearch(int a[],int n,int x){
+        int ans=n;
+        int low=0,high=n-1;
+        while(low<=high){
+            int mid=(low+high)/2;
+            if(a[mid]==x){
+                
+            }
+            else if(a[mid]<x){
+                
+            }
+            else{
+                
+            }
+        }
+        return ans;
+}

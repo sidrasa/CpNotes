@@ -1,46 +1,26 @@
-const int ALPHABET_SIZE = 26;
-// struct TrieNode *root = getNode();
-struct TrieNode
-{
-    struct TrieNode *children[ALPHABET_SIZE];
-    bool isEndOfWord;
-};
-struct TrieNode *getNode(void)
-{
-    struct TrieNode *pNode =  new TrieNode;
- 
-    pNode->isEndOfWord = false;
- 
-    for (int i = 0; i < ALPHABET_SIZE; i++)
-        pNode->children[i] = NULL;
- 
-    return pNode;
-} 
-void insert(struct TrieNode *root, string key)
-{
-    struct TrieNode *pCrawl = root;
- 
-    for (int i = 0; i < key.length(); i++)
-    {
-        int index = key[i] - 'a';
-        if (!pCrawl->children[index])
-            pCrawl->children[index] = getNode();
- 
-        pCrawl = pCrawl->children[index];
+struct trie{
+        unordered_map<char,trie*> child;
+        bool isLast;
+        trie(){
+            for (char i = 'a'; i <= 'z'; i++)
+                child[i] = NULL;
+            isLast = false;
+        }
+    };
+    trie *root = NULL;
+    
+    void insert(string s){
+        int len = s.length();
+        trie *itr = root;
+        for (int i = 0; i < len; i++){
+            trie *nextNode = itr->child[s[i]];
+            if (nextNode == NULL){
+                nextNode = new trie();
+                itr->child[s[i]] = nextNode;
+            }
+            itr = nextNode;
+            if (i == len - 1)
+                itr->isLast = true;
+        }
     }
-    pCrawl->isEndOfWord = true;
-}
- 
-bool search(struct TrieNode *root, string key)
-{
-    struct TrieNode *pCrawl = root;
-    for (int i = 0; i < key.length(); i++)
-    {
-        int index = key[i] - 'a';
-        if (!pCrawl->children[index])
-            return false;
- 
-        pCrawl = pCrawl->children[index];
-    }
-    return (pCrawl->isEndOfWord);
-}
+    // root = new trie();

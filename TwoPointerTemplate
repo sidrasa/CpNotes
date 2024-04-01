@@ -1,15 +1,16 @@
 int left = 0;
 int right = -1;
-while(left < n) {
-    while(right + 1 < n && less) {
-       
-    }
-    if(goodenough) {
-        minLength = min(minLength, right - left + 1);
-    }
-    decrementBit(bits, nums[left]);
-    left++;
-    if(left > right) {
-        right = left - 1;
-    }
+while (left < n) {
+  while (right + 1 < n && less) {
+    // increment from right
+    right++;
+  }
+  if (goodenough) {
+    minLength = min(minLength, right - left + 1);
+  }
+//   decrement from left
+  left++;
+  if (left > right) {
+    right = left - 1;
+  }
 }

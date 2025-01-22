@@ -20,3 +20,4 @@ bool dfs(int v, vector<int> graph[]) {
         }
         return false;
     }
+https://www.geeksforgeeks.org/detect-cycle-direct-graph-using-colors/?ref=asr3

@@ -1,0 +1,35 @@
+void khan(int n,vector<int>g[],vector<int>&vis,vector<int>&in){
+        queue<int>q;
+        for(int i=0;i<n;i++){
+            if(in[i]==0){
+                q.push(i);
+            }
+        }
+        while(!q.empty()){
+            auto f=q.front();
+            q.pop();
+            vis[f]=1;
+            for(auto ng:g[f]){
+                in[ng]--;
+                if(in[ng]==0){
+                    q.push(ng);
+                }
+            }
+        }
+    }
+    bool canFinish(int n, vector<vector<int>>& pre) {
+        vector<int>g[n];
+        vector<int>vis(n,0);
+        vector<int>in(n,0);
+        for(auto e:pre){
+            int u=e[0],v=e[1];
+            in[v]++;
+            g[u].push_back(v);
+        }
+        khan(n,g,vis,in);
+        for(int i=0;i<n;i++){
+            if(!vis[i])
+                return 0;
+        }
+        return 1;
+    }
